@@ -27,10 +27,18 @@ function App() {
 
   return (
     <Router>
-      <Search search={search} setSearch={setSearch} />
       <Routes>
         <Route exact path="/volumes/:id" element={<About />} />
-        <Route exact path="/" element={<Books booksArray={books} />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+            <Search search={search} setSearch={setSearch} />
+              <Books booksArray={books} />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );

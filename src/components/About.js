@@ -10,9 +10,9 @@ export default function About() {
     const response = await fetch(url);
     const responseJson = await response.json();
     if (responseJson) {
-      setBook(responseJson);
+      setBook(responseJson.volumeInfo);
     }
-    console.log(responseJson);
+    // console.log(responseJson);
   };
   useEffect(() => {
     getBookRequest();
@@ -20,8 +20,21 @@ export default function About() {
   }, []);
   return (
     <>
-      <AboutItem />
-      {/*//TODO: props */}
+      {book && (
+        <AboutItem
+          title={book.title}
+          authors={book.authors}
+          description={
+            book.description ? book.description : "no description available"
+          }
+          publishedDate={book.publishedDate}
+          image={
+            book.imageLinks
+              ? book.imageLinks.thumbnail
+              : "https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png"
+          }
+        />
+      )}
     </>
   );
 }

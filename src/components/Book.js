@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Book(props) {
-  const { imageLink, title, description, id } = props;
+  const { imageLink, title, id } = props;
 
   const navigate = useNavigate();
   const handleOnClick = useCallback(
@@ -14,14 +14,15 @@ function Book(props) {
 
   return (
     <div className="book" onClick={() => handleOnClick(id)}>
+      <div className="book-image-container">
       <img
-        style={{ height: "200px", width: "150px" }}
+        className="book-image"
         src={imageLink}
         alt={title}
-      />
+      /></div>
       <br />
-      <h1>{title}</h1>
-      <hr />
+      <h1 className="book-title">{title}</h1>
+      {/* <hr /> */}
     </div>
   );
 }

@@ -1,11 +1,66 @@
-.books{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* width:100%; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  background-color: #111;
+  color: #fff;
 }
 
-.book{
-  width:33%;
-  margin:50px;
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 35px;
+  gap: 5em;
+}
+
+.book {
+  width: 300px;
+  text-align: center;
+  
+  box-shadow: rgb(0, 128, 128, 0.23) 0px 10px 20px,
+    black 0px 6px 6px;
+  border: 5px solid rgba(0,0,0,0.5);
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.book:hover{
+  transform:scale(1.03);
+  box-shadow: rgb(0, 128, 128, 0.23) 10px 20px 30px,
+    black 0px 6px 6px;
+}
+
+.book .book-image-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.book .book-image-container img {
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px black;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.book:hover .book-image-container img {
+  transform: translateY(-7px);
+  box-shadow: 10px 10px 5px black;
+}
+
+.book .book-title {
+  color: teal;
+  font-size:2em;
+  font-family: poppins;
+  text-transform: capitalize;
+}
+
+
+@media (max-width: 450px) {
+  .book{
+    width: 80%;
+  }
 }
