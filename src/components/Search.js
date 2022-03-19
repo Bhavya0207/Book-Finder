@@ -11,6 +11,7 @@ function search(props) {
             Book-Pedia
           </Link>
         </div>
+        
         <input
           onChange={(e) => props.setSearch(e.target.value)}
           className="search"
