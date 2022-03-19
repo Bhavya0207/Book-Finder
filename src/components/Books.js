@@ -6,6 +6,7 @@ import Book from "./Book";
   return (
     <>
       <div className="books">
+        
         {booksArray.map((element, index) => {
           return (
             <Book
