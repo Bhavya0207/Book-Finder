@@ -1,10 +1,21 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 function search(props) {
   return (
     <>
-      <div style={{ width: "100%", height: "20%", textAlign: "center" }}>
-        <input onChange={(e) => props.setSearch(e.target.value)} />
+      <div className="searchbar">
+        <div>
+          <i className="fa-solid fa-book"></i>
+          <Link to="/" className="logo">
+            Book-Pedia
+          </Link>
+        </div>
+        <input
+          onChange={(e) => props.setSearch(e.target.value)}
+          className="search"
+          placeholder="Start searching..."
+        />
       </div>
     </>
   );
