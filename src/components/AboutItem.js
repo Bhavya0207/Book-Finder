@@ -1,21 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function AboutItem(props) {
   const { title, description, authors, publishedDate, image } = props;
-  // console.log(title, description, authors, publishedDate, image);
   return (
     <>
-      <h1>{title}</h1>
-      <img
-        src={image}
-        alt={title}
-        style={{ height: "200px", width: "150px" }}
-      />
-      <br />
+      <div className="about-bar">
+        <Link to="/" className="logo">
+          <i className="fa-solid fa-arrow-left-long"></i>
+          Book-Pedia
+        </Link>
+      </div>
+      <div className="about-main">
+        <img src={image} alt={title} />
+        <div className="main-details">
+          <h1>{title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: description }}></p>
+        </div>
+      </div>
       {publishedDate}
-      {/* there can be html tags in the description */}
-      <p dangerouslySetInnerHTML={{ __html: description }}></p>
-
       {authors.map((author, index) => {
         return <p key={index}>{author}</p>;
       })}
