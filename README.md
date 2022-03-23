@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Book-Pedia
+
+This is a react web app that allows you to search for
+books and get information an links about them
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- Auto searh for thousands of books
 
-In the project directory, you can run:
+- Get information about the books
+  - Title
+  - Cover page
+  - Description
+  - Rating
+  - Raters
+  - Published Date
+  - Authors
+## API Reference
+### Google Books api has been used for this project
 
-### `npm start`
+Base url - https://www.googleapis.com/books/v1/
+#### Get all items for the value
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```http
+  GET /volumes?q=${searchValue}
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+| `search_value` | `string` | **Required**. Any Keyword |
 
-### `npm test`
+#### Get item
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```http
+  GET /volumes/${id}
+```
 
-### `npm run build`
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+| `id`      | `string` | **Required**. Id of item to fetch |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Environment Variables
 
-### `npm run eject`
+To run this project, you will need to add the following environment variables to your .env.local file
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`REACT_APP_API_KEY="YourAPIKeyHere"`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Run Locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone the project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  git clone https://github.com/Bhavya0207/Book-Pedia
+```
 
-### Code Splitting
+Go to the project directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  cd Book-Pedia
+```
 
-### Analyzing the Bundle Size
+Create .env.local file in root
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+REACT_APP_API_KEY="YourAPIKeyHere"
+```
 
-### Making a Progressive Web App
+Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+  npm install
+```
 
-### Advanced Configuration
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+  npm run start
+```
 
-### Deployment
+Build the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+  npm run build
+```
 
-### `npm run build` fails to minify
+Stop the development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+Ctrl + C (same for Mac and Windows)
+```
+
+## Tech Used
+
+**Client:** React, Google Books API
+
+
