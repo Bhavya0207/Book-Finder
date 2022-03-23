@@ -82,6 +82,7 @@ export default function About() {
           }
           rating={book.averageRating ? book.averageRating : "0"}
           raters={book.ratingsCount ? book.ratingsCount : "0"}
+          link={book.previewLink?book.previewLink:false}
         />
       )}
     </>

@@ -245,6 +245,29 @@ body {
   color: #FFD700;
 }
 
+.link-button{
+  display: flex;
+  justify-content: center;
+  margin:20px;
+}
+
+.link-button button{
+  cursor: pointer;
+  padding: 10px;
+  background-color:teal;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px black;
+}
+
+.link-button button:hover{
+  box-shadow: 10px 10px 5px black;
+  transition: all 0.2s ease-in-out;
+  transform:scale(1.05)
+}
+
 @media (max-width: 450px) {
   .book {
     width: 80%;

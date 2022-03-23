@@ -2,8 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function AboutItem(props) {
-  const { title, description, authors, publishedDate, image, rating, raters } =
-    props;
+  const {
+    title,
+    description,
+    authors,
+    publishedDate,
+    image,
+    rating,
+    raters,
+    link,
+  } = props;
+  // console.log(link)
   const [stars, setStars] = useState([]);
   const getStars = () => {
     let starArray = [];
@@ -69,6 +78,12 @@ function AboutItem(props) {
           {" Stars"}
         </div>
         <p>*rated by {raters} readers</p>
+      </div>
+
+      <div className="link-button">
+        {link && (
+          <button onClick={() => window.open(link, "blank")}>Get Book</button>
+        )}
       </div>
     </>
   );
