@@ -194,6 +194,57 @@ body {
   padding: 5px;
 }
 
+.details {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:30px;
+  margin:20px 30px;
+  font-size: 1.2em;
+}
+
+.authors,.date {
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-pen-to-square,.fa-calendar{
+  color: teal;
+}
+
+.fa-calendar{
+  margin-right: 10px;
+}
+
+.details p{
+  text-decoration: underline;
+  text-decoration-color: teal;
+}
+
+.ratings{
+  display:flex;
+  margin: 30px 30px;
+  justify-content:center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.rating{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  margin:10px;
+}
+
+.fa-star-half-stroke,.fa-star{
+  color: #FFD700;
+}
+
 @media (max-width: 450px) {
   .book {
     width: 80%;
