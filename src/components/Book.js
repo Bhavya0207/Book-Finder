@@ -5,6 +5,7 @@ function Book(props) {
   const { imageLink, title, id } = props;
 
   const navigate = useNavigate();
+  // go to book page on click
   const handleOnClick = useCallback(
     (url) => {
       navigate(`/volumes/${url}`, { replace: true });
@@ -22,7 +23,6 @@ function Book(props) {
       /></div>
       <br />
       <h1 className="book-title">{title}</h1>
-      {/* <hr /> */}
     </div>
   );
 }

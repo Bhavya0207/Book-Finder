@@ -2,7 +2,7 @@
 
 
 This is a react web app that allows you to search for
-books and get information an links about them
+books and get information and links about them
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Features

@@ -21,8 +21,9 @@ export default function About() {
       const response = await fetch(url);
       setProgress(50);
       if (!response.ok) {
+        // means the book wasn't found/ wrong id
+        // in such case redirct to home
         setError(true);
-        setProgress(100);
         return null;
       }
       const responseJson = await response.json();
@@ -36,11 +37,14 @@ export default function About() {
   };
 
   useEffect(() => {
+    //call function on load
     getBookRequest();
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
+    // if error then redirect
+
     if (error) {
       setTimeout(() => {
         redirct();
@@ -51,6 +55,7 @@ export default function About() {
 
   return (
     <>
+      {/* No need to show loading bar when error */}
       {!error && (
         <LoadingBar
           color="white"
@@ -59,7 +64,7 @@ export default function About() {
           shadow={true}
         />
       )}
-
+      {/* Show message if error */}
       {error && (
         <>
           <h1>No such Book exists</h1>
@@ -67,6 +72,7 @@ export default function About() {
         </>
       )}
 
+      {/* main page only when no error and book in not null */}
       {!error && book && (
         <AboutItem
           title={book.title}
@@ -82,7 +88,7 @@ export default function About() {
           }
           rating={book.averageRating ? book.averageRating : "0"}
           raters={book.ratingsCount ? book.ratingsCount : "0"}
-          link={book.previewLink?book.previewLink:false}
+          link={book.previewLink ? book.previewLink : false}
         />
       )}
     </>

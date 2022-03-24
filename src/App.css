@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -10,6 +9,10 @@ body {
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                     Styling for home page and book card                    */
+/* -------------------------------------------------------------------------- */
 
 .books {
   display: flex;
@@ -31,6 +34,8 @@ body {
   animation-fill-mode: forwards;
   transition: all 0.3s ease-in-out;
 }
+
+/* ------------------------ onload fade in animation ------------------------ */
 
 @keyframes fadeInAnimation {
   0% {
@@ -74,6 +79,8 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+/* ------------------------------- title float ------------------------------ */
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -85,6 +92,8 @@ body {
     transform: translatey(0px);
   }
 }
+
+/* -------------------- picture float for particular book ------------------- */
 
 @keyframes float-about {
   0% {
@@ -99,6 +108,8 @@ body {
     transform: translatey(0px);
   }
 }
+
+/* ------------------------------- top nav bar ------------------------------ */
 
 .searchbar {
   display: flex;
@@ -144,6 +155,10 @@ body {
   font-size: 1em;
   margin: 0 15px;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                         Styles for about-book page                         */
+/* -------------------------------------------------------------------------- */
 
 .about-main {
   display: flex;
@@ -267,6 +282,10 @@ body {
   transition: all 0.2s ease-in-out;
   transform:scale(1.05)
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                Media Queries                               */
+/* -------------------------------------------------------------------------- */
 
 @media (max-width: 450px) {
   .book {
