@@ -35,9 +35,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/volumes/:id" element={<About />} />
+        <Route path="/volumes/:id" element={<About />} />
         <Route
-          exact
           path="/"
           element={
             <>
