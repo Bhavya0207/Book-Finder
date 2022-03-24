@@ -1,5 +1,6 @@
 # Book-Pedia
 
+
 This is a react web app that allows you to search for
 books and get information an links about them
 
@@ -93,9 +94,9 @@ Build the project
 
 Stop the development Server
 
-```
-Ctrl + C (same for Mac and Windows)
-```
+
+<kbd>Ctrl</kbd> +<kbd> C</kbd> (same for Mac and Windows)
+
 
 ## Tech Used
 
